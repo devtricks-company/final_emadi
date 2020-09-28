@@ -1,0 +1,45 @@
+.offer_post{
+    width: 100%;
+    margin-top: 100px;
+    height: 609px;
+}
+.offer_post_container{
+    width: 80%;
+    margin:0 auto;
+    height: 609px;
+   
+    h2{
+        padding-bottom: 50px;
+        direction: rtl;
+        text-align: right;
+    }
+    .post_wrapper{
+        display: flex;
+        flex-direction: row-reverse;
+        height: 609px;
+        .first_post{
+            height: 609px;
+            width:50%;
+            img{
+                width:100%;
+                height: 550px;
+                object-fit: cover;
+
+                
+            }
+        }
+
+        .category_date{
+            direction: rtl;
+            text-align: right;
+            display: flex;
+            justify-content: space-between
+        }
+        .post_title{
+            direction: rtl;
+            text-align: right;
+            margin-top: 20px;
+            font-size:18px;
+        }
+    }
+}

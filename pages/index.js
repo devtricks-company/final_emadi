@@ -11,7 +11,8 @@ import Navbar , {GET_SITE_TITLE} from '../components/navbar/Navbar'
 import HomeHeader , {HOME_HEADER} from '../components/HomeHeader/HomeHeader'
 import {motion} from 'framer-motion'
 import BetterPost ,{GET_BETTER_POST} from '../components/betterPost/BetterPost'
-import SliderPost from '../components/sliderPost/SliderPost'
+import SliderPost ,{GET_SLIDER_POST} from '../components/sliderPost/SliderPost'
+import OfferPost from '../components/offerpost/OfferPost'
 const IndexPage = () => (
   <motion.div exit={{opacity:0}} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}}>
   <App>
@@ -19,6 +20,7 @@ const IndexPage = () => (
     <HomeHeader />
     <BetterPost />
     <SliderPost />
+    <OfferPost />
    
   </App>
   </motion.div>
@@ -38,6 +40,10 @@ export async function getStaticProps() {
   })
   await apolloClient.query({
     query: GET_BETTER_POST,
+   
+  })
+  await apolloClient.query({
+    query: GET_SLIDER_POST,
    
   })
 
