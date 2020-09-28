@@ -7,22 +7,38 @@ import PostList, {
   allPostsQueryVars,
 } from '../components/PostList'
 import { initializeApollo } from '../lib/apolloClient'
-
+import Navbar , {GET_SITE_TITLE} from '../components/navbar/Navbar'
+import HomeHeader , {HOME_HEADER} from '../components/HomeHeader/HomeHeader'
+import {motion} from 'framer-motion'
+import BetterPost ,{GET_BETTER_POST} from '../components/betterPost/BetterPost'
+import SliderPost from '../components/sliderPost/SliderPost'
 const IndexPage = () => (
+  <motion.div exit={{opacity:0}} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}}>
   <App>
-    <Header />
-    <InfoBox>ℹ️ This page shows how to use SSG with Apollo.</InfoBox>
-    <Submit />
-    <PostList />
+    <Navbar />
+    <HomeHeader />
+    <BetterPost />
+    <SliderPost />
+   
   </App>
+  </motion.div>
 )
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
   await apolloClient.query({
-    query: ALL_POSTS_QUERY,
-    variables: allPostsQueryVars,
+    query: GET_SITE_TITLE,
+   
+  })
+
+  await apolloClient.query({
+    query: HOME_HEADER,
+   
+  })
+  await apolloClient.query({
+    query: GET_BETTER_POST,
+   
   })
 
   return {

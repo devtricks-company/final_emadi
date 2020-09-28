@@ -1,0 +1,19 @@
+.navbar{
+    width: 100%;
+    padding: 1.5rem 0;
+    .container_navbar{
+        width:90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .brand_navbar{
+
+        }
+        span{
+            font-size: 28px;
+            padding:0 10px;
+        }
+       
+    }
+}
