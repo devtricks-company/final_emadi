@@ -1,3 +1,4 @@
+import { InferGetServerSidePropsType } from 'next'
 import App from '../components/App'
 import InfoBox from '../components/InfoBox'
 import Header from '../components/Header'
@@ -31,7 +32,7 @@ const IndexPage = () => (
   </motion.div>
 )
 
-export async function getServerSideProps() {
+export async function getInitialProps() {
   const apolloClient = initializeApollo()
 
   await apolloClient.query({
