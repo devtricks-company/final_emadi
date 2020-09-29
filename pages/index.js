@@ -32,7 +32,7 @@ const IndexPage = () => (
   </motion.div>
 )
 
-export async function getInitalProps() {
+export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
   await apolloClient.query({
