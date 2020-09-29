@@ -1,0 +1,57 @@
+.footer{
+    width: 100%;
+    background: #222;
+    padding:60px 0;
+    .footer_container{
+        margin: 0 auto;
+        width: 80%;
+        direction: rtl;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .footer_discription{
+        width: 33.333%;
+        h2{
+            color:white;
+            font-size: 20px;
+            padding-bottom: 30px;
+        }
+        p{
+            color:white;
+            font-size: 15px;
+        }
+    }
+    .footer_category{
+        
+        text-align: center;
+        
+        h2{
+            color:white;
+            font-size:20px;
+            text-align: right;
+        }
+        p{
+            text-align: center;
+            a{
+                color:white;
+                text-decoration: none;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+    }
+    .footer_pages{
+        width: 33.333%;
+        h2{
+            font-size: 15px;
+            color: white;
+        }
+        a{
+            color:white;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+    }
+}

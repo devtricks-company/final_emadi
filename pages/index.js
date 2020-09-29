@@ -12,7 +12,10 @@ import HomeHeader , {HOME_HEADER} from '../components/HomeHeader/HomeHeader'
 import {motion} from 'framer-motion'
 import BetterPost ,{GET_BETTER_POST} from '../components/betterPost/BetterPost'
 import SliderPost ,{GET_SLIDER_POST} from '../components/sliderPost/SliderPost'
-import OfferPost from '../components/offerpost/OfferPost'
+import OfferPost , {GET_OFFER_POST} from '../components/offerpost/OfferPost'
+import Category ,{GET_CATEGORY} from '../components/category/Category'
+import NewsLetter from '../components/newsletter/NewsLetter'
+import Footer from '../components/footer/Footer'
 const IndexPage = () => (
   <motion.div exit={{opacity:0}} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}}>
   <App>
@@ -21,7 +24,9 @@ const IndexPage = () => (
     <BetterPost />
     <SliderPost />
     <OfferPost />
-   
+    <Category />
+    <NewsLetter />
+    <Footer />
   </App>
   </motion.div>
 )
@@ -44,6 +49,14 @@ export async function getStaticProps() {
   })
   await apolloClient.query({
     query: GET_SLIDER_POST,
+   
+  })
+  await apolloClient.query({
+    query: GET_OFFER_POST,
+   
+  })
+  await apolloClient.query({
+    query: GET_CATEGORY,
    
   })
 

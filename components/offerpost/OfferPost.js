@@ -40,19 +40,21 @@ export default function OfferPost() {
               <>
                 {index === 0 ? (
                   <>
-                    <div className="image_post_container">
+                  <div className={styles.wrapper_container}>
+                   
                       <img
                         src={post && post.featuredImage.node.mediaItemUrl}
                         alt=""
                       />
-                    </div>
+                   
                     <div className={styles.category_date}>
                       <span>
                         <span>{post.categories.nodes[0].name}</span>
                       </span>
-                      <span>{digitsEnToFa(moment(post.date, 'YYYY-M-D HH:mm:ss').endOf('jMonth').format('jYYYY/jM/jD'))}</span>
+                      <span>{digitsEnToFa(moment(post.date, 'YYYY-M-D HH:mm:ss').format('jYYYY/jM/jD'))}</span>
                     </div>
                     <h3 className={styles.post_title}>{digitsEnToFa(post.title)}</h3>
+                    </div>
                   </>
                 ) : (
                   null
@@ -61,9 +63,25 @@ export default function OfferPost() {
               </>
             ))}
         </div>
-        <div className="second_post">
+        <div className={styles.second_post}>
             {data && data.posts.nodes.map((post,index) => 
                 <>
+                  {index != 0 ? 
+                    <div className={styles.post_offer_item}>
+                      <div className="post_image_container">
+                        <img src={post.featuredImage.node.mediaItemUrl} alt={post.title}/>
+                      </div>
+                      <div className={styles.post_category_date}>
+                        <span>
+                          <span>{post.categories.nodes[0].name}</span>
+                        </span>
+                        <span>{digitsEnToFa(moment(post.date, 'YYYY-M-D HH:mm:ss').format('jYYYY/jM/jD'))}</span>
+                        
+                      </div>
+                      <h3>{post.title}</h3>
+                    </div>
+                  
+                  : null}
                 </>
             )}
         </div>
