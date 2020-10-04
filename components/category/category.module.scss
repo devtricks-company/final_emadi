@@ -9,9 +9,14 @@
         .category_wrapper_item{
             display: flex;
             margin-top: 50px;
-           
+           a{
+               display: inline-block;
+               width: 16.66666%;
+               text-decoration: none;
+               color:black;
+           }
             .category_item{
-                width:16.666%;
+                width:100%;
                 padding:0 10px;
                 &:hover{
                     cursor: pointer;

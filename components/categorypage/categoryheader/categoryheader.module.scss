@@ -1,0 +1,52 @@
+
+.header{
+    width: 100%;
+  
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 60px;
+    overflow: hidden;
+  
+    .category_container{
+        width: 100%;
+        text-align: center;
+        
+        .showCategory{
+            color:white;
+            position: relative;
+            top:90px;
+            text-decoration: none;
+
+        }
+
+        & > h2{
+            color:white;
+            font-size:62px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            direction: rtl;
+            text-align: right;
+            padding-top: 200px;
+            span{
+                font-weight: 400;
+                font-size: 32px;
+                position: relative;
+                top:-30px;
+                left:-30px;
+                border: 1px solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+               width: 80px;
+               height: 80px;
+
+            }
+          
+       
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.post{
+    width: 100%;
+    padding-top: 30px;
+    .post_container{
+        width:80%;
+        margin: 0 auto;
+        direction: rtl;
+        display: flex;
+        .data_container{
+            width:25%;
+            padding:50px 70px;
+            p{
+                padding:10px 0;
+                border-bottom: 2px solid black;
+            }
+        }
+        .post_content{
+            width: 75%;
+            padding-top: 25px;
+            p{
+                padding-top:50px;
+            }
+            img{
+                width:800px;
+                height: 400px;
+                object-fit: cover;
+            }
+            h3{
+                padding-top:50px
+            }
+            h2{
+                padding-top: 50px;
+            }
+        }
+    }
+}

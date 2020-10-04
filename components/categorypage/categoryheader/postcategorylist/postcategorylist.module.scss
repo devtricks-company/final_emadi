@@ -1,0 +1,19 @@
+.post_list{
+    width: 100%;
+    background: #f5f3f1;
+    padding-top:80px;
+    .post_list_container{
+        width:85%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+}
+.loadMore{
+    width:100%;
+    text-align: center;
+    a{
+        cursor: pointer;
+    }
+}

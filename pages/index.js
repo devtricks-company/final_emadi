@@ -10,7 +10,7 @@ import PostList, {
 import { initializeApollo } from '../lib/apolloClient'
 import Navbar , {GET_SITE_TITLE} from '../components/navbar/Navbar'
 import HomeHeader , {HOME_HEADER} from '../components/HomeHeader/HomeHeader'
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import BetterPost ,{GET_BETTER_POST} from '../components/betterPost/BetterPost'
 import SliderPost ,{GET_SLIDER_POST} from '../components/sliderPost/SliderPost'
 import OfferPost , {GET_OFFER_POST} from '../components/offerpost/OfferPost'
@@ -18,18 +18,19 @@ import Category ,{GET_CATEGORY} from '../components/category/Category'
 import NewsLetter from '../components/newsletter/NewsLetter'
 import Footer from '../components/footer/Footer'
 const IndexPage = () => (
-  <motion.div exit={{opacity:0}} initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}}>
-  <App>
+
+  <>
+ 
     <Navbar />
     <HomeHeader />
     <BetterPost />
     <SliderPost />
     <OfferPost />
-    <Category />
+    <Category title={true}/>
     <NewsLetter />
     <Footer />
-  </App>
-  </motion.div>
+
+ </>
 )
 
 export async function getServerSideProps() {
