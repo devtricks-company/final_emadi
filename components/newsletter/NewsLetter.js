@@ -9,8 +9,10 @@ export default function NewsLetter(){
             </div>
             <div className={styles.content_news_letter}>
                 <form>
-                    <input type="email" id="email" name="email"  />
+                    <h2>با ما همراه باشید</h2>
+                   
                     <button type="submit" class="button_submit">ارسال</button>
+                    <input type="email" id="email" name="email" placeholder="لطفا ایمیل خود را وارد کنید" />
                 </form>
             </div>
         </section>

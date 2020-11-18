@@ -1,6 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
 import Link from "next/link";
 import styles from './footer.module.scss';
+import {AiOutlineTwitter,AiOutlineWhatsApp,AiOutlineInstagram} from 'react-icons/ai';
+import {RiFacebookFill} from 'react-icons/ri';
+
 export const GET_FOOTER = gql`
   query MyQuery {
     footers {
@@ -36,8 +39,11 @@ export default function Footer() {
           <h2>{data && data.footers.nodes[0].title}</h2>
           <div dangerouslySetInnerHTML={{__html:data && data.footers.nodes[0].excerpt}} />
           <div className={styles.social_media}>
-              
-           
+            <AiOutlineTwitter color="white" size={24} style={{marginTop:"30px"}} />
+            <AiOutlineWhatsApp color="white" size={24} style={{marginTop:"30px",marginRight:"10px"}}/>
+            <AiOutlineInstagram color="white" size={24} style={{marginTop:"30px",marginRight:"10px"}}/>
+            <RiFacebookFill color="white" size={24} style={{marginTop:"30px",marginRight:"10px"}} />
+
           </div>
         </div>
         <div className={styles.footer_category}>
@@ -53,7 +59,7 @@ export default function Footer() {
                 )}
         </div>
         <div className={styles.footer_pages}>
-            <h2>صحفه های بیشتر</h2>
+            <h2>صحفات دیگر </h2>
             <p><Link href="/">خانه</Link></p>
             <p><Link href="/">درباره ما</Link></p>
             <p><Link href="/">تماس با ما</Link></p>

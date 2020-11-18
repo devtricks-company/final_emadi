@@ -1,11 +1,13 @@
 import {gql,useQuery} from '@apollo/client';
 import styles from './navbar.module.scss';
-import {FaSearch,FaTimes} from 'react-icons/fa';
+import {FaTimes} from 'react-icons/fa';
+import {CgSearch} from 'react-icons/cg';
 import {CgMenuRight} from 'react-icons/cg';
 import Category from '../category/Category';
 import { useEffect, useState } from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import Aos from 'aos';
+import Link from 'next/link';
 
 export const GET_SITE_TITLE = gql`
         query GetTitle {
@@ -107,12 +109,12 @@ export default function Navbar(){
         <nav className={styles.navbar}>
           <div className={styles.container_navbar}>
           <a href="/" className={styles.brand_navbar}>
-                <img src="/logo.png" alt=""/>
+                <img src="/logo.png" alt="" style={{width:"80px"}}/>
             </a>
             <h1>{data && data.allSettings.generalSettingsTitle}</h1>
             <div className={styles.icon_wrapper}>
-                <span><FaSearch onClick={showSearchClickHandler} /></span>
-                <span><CgMenuRight onClick={showMenuHanlder} /></span> 
+                <span><CgSearch onClick={showSearchClickHandler} /></span>
+                <span><CgMenuRight onClick={showMenuHanlder} fontSize="25px" /></span> 
             </div>
           </div>
         </nav>
@@ -131,7 +133,7 @@ export default function Navbar(){
             <nav className={styles.navbar_dark}>
           <div className={styles.container_navbar}>
           <a href="/" className={styles.brand_navbar}>
-                <img src="/logo.png" alt=""/>
+                <img src="/logo.png" alt="" style={{width:"80px"}}/>
             </a>
             <h1>{data && data.allSettings.generalSettingsTitle}</h1>
             <div className={styles.icon_wrapper}>
@@ -154,7 +156,7 @@ export default function Navbar(){
         <nav className={styles.navbar_search}>
           <div className={styles.container_navbar}>
           <a href="/" className={styles.brand_navbar}>
-                <img src="/logo.png" alt=""/>
+                <img src="/logo.png" alt="" style={{width:"80px"}}/>
             </a>
             <h1>{data && data.allSettings.generalSettingsTitle}</h1>
             <div className={styles.icon_wrapper}>
@@ -174,7 +176,7 @@ export default function Navbar(){
                         {dataSearch && dataSearch.posts.edges.length > 0 && dataSearch.posts.edges.map(post => 
                             <div key={post.node.id} data-aos="fade-up" className={styles.post_item}>
                                 <div className={styles.post_item_image}>
-                                    <img src={post.node.featuredImage.node.mediaItemUrl} alt=""/>
+                                    <img src={post.node.featuredImage.node.mediaItemUrl} alt="" style={{width:"80px"}}/>
                                 </div>
                                 <div className={styles.category_date}>
                                     <span>{post.node.categories.nodes[0].name}</span>
@@ -222,7 +224,10 @@ export default function Navbar(){
                    <ul>
                        {dataCategory && dataCategory.categories.nodes.map(category => 
                             <>
-                            {category.name === "Uncategorized" ? null : <li>{category.name}</li> }
+                            {category.name === "Uncategorized" ? null : <li>
+                                <Link href={`categories/${category.id}`}><a>{category.name}
+                                    </a></Link> 
+                                </li> }
                                 
                             </>
                         )}

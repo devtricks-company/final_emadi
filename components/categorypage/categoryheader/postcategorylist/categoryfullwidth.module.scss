@@ -4,10 +4,16 @@
     display: flex;
     .first_col{
         width:25%;
+        @media(max-width:576px){
+            display: none;
+        }
     }
     .second_col{
         width:75%;
         height: 70vh;
+        @media(max-width:576px){
+            width: 100%;
+        }
         position: relative;
         img{
             width: 100%;
@@ -17,9 +23,16 @@
         .overlay{
             position: absolute;
             width:700px;
-            height: 400px;
+            min-height: 400px;
             bottom: 0;
             left: -350px;
+            @media(max-width:576px){
+                width: 100%;
+                left:0px;
+                top:0px;
+                min-height: 400px;
+
+            }
             background: white;
             padding:3.5rem;
             direction: rtl;

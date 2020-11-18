@@ -1,5 +1,8 @@
 .post_item{
     width: 25%;
+    @media(max-width:576px){
+        width: 100%;
+    }
     padding:0 15px;
     &:nth-child(odd){
         .post_item_image_container{
@@ -32,6 +35,7 @@
         direction: rtl;
         text-align: right;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         padding-top:30px  ;
         .category_line{
@@ -42,12 +46,19 @@
                 top:-15px;
                 left: -50px;
                 background: #f5f3f1;
+                color:rgba(0,0,0,0.7)
             }
+           
         }
     }
     .category_title{
         direction: rtl;
         text-align: right;
         padding-bottom: 50px;
+        font-size:18px;
+    }
+    .post_date{
+        position: relative;
+        top:-10px;
     }
 }

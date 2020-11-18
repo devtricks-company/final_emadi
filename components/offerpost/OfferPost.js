@@ -1,7 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
 import styles from "./offer.module.scss";
-import moment from 'moment-jalaali';
-import {digitsEnToFa} from 'persian-tools2';
+import moment from "moment-jalaali";
+import { digitsEnToFa } from "persian-tools2";
+import Link from "next/link";
 
 export const GET_OFFER_POST = gql`
   query MyQuery {
@@ -30,61 +31,77 @@ export default function OfferPost() {
 
   return (
     <section className={styles.offer_post}>
-      
       <div className={styles.offer_post_container}>
         <h2>مطالب پیشنهادی</h2>
         <div className={styles.post_wrapper}>
-            <div className={styles.first_post}>
-          {data &&
-            data.posts.nodes.map((post, index) => (
-              <>
-                {index === 0 ? (
-                  <>
-                  <div className={styles.wrapper_container}>
-                   
-                      <img
-                        src={post && post.featuredImage.node.mediaItemUrl}
-                        alt=""
-                      />
-                   
-                    <div className={styles.category_date}>
-                      <span>
-                        <span>{post.categories.nodes[0].name}</span>
-                      </span>
-                      <span>{digitsEnToFa(moment(post.date, 'YYYY-M-D HH:mm:ss').format('jYYYY/jM/jD'))}</span>
-                    </div>
-                    <h3 className={styles.post_title}>{digitsEnToFa(post.title)}</h3>
-                    </div>
-                  </>
-                ) : (
-                  null
-                )}
-                
-              </>
-            ))}
-        </div>
-        <div className={styles.second_post}>
-            {data && data.posts.nodes.map((post,index) => 
+          <div className={styles.first_post}>
+            {data &&
+              data.posts.nodes.map((post, index) => (
                 <>
-                  {index != 0 ? 
+                  {index === 0 ? (
+                    <>
+                      <div className={styles.wrapper_container}>
+                        <Link href={`/post/${post.id}`}><a>
+                            <img
+                              src={post && post.featuredImage.node.mediaItemUrl}
+                              alt=""
+                            />
+
+                            <div className={styles.category_date}>
+                              <span>
+                                <span>{post.categories.nodes[0].name}</span>
+                              </span>
+                              <span>
+                                {digitsEnToFa(
+                                  moment(post.date, "YYYY-M-D HH:mm:ss").format(
+                                    "jYYYY/jM/jD"
+                                  )
+                                )}
+                              </span>
+                            </div>
+                            <h3 className={styles.post_title}>
+                              {digitsEnToFa(post.title)}
+                            </h3>
+                          </a></Link>
+                      </div>
+                    </>
+                  ) : null}
+                </>
+              ))}
+          </div>
+          <div className={styles.second_post}>
+            {data &&
+              data.posts.nodes.map((post, index) => (
+                <>
+                  {index != 0 ? (
                     <div className={styles.post_offer_item}>
+                       <Link href={`/post/${post.id}`}><a>
                       <div className="post_image_container">
-                        <img src={post.featuredImage.node.mediaItemUrl} alt={post.title}/>
+                     
+                        <img
+                          src={post.featuredImage.node.mediaItemUrl}
+                          alt={post.title}
+                        />
                       </div>
                       <div className={styles.post_category_date}>
                         <span>
                           <span>{post.categories.nodes[0].name}</span>
                         </span>
-                        <span>{digitsEnToFa(moment(post.date, 'YYYY-M-D HH:mm:ss').format('jYYYY/jM/jD'))}</span>
-                        
+                        <span>
+                          {digitsEnToFa(
+                            moment(post.date, "YYYY-M-D HH:mm:ss").format(
+                              "jYYYY/jM/jD"
+                            )
+                          )}
+                        </span>
                       </div>
                       <h3>{post.title}</h3>
+                      </a></Link>
                     </div>
-                  
-                  : null}
+                  ) : null}
                 </>
-            )}
-        </div>
+              ))}
+          </div>
         </div>
       </div>
     </section>

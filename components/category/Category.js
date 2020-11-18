@@ -38,7 +38,7 @@ export default function Category({title,theme}){
                     <>
                     {category.name !== "Uncategorized" ? <Link as={`/categories/${category.id}`} href="/categories/[id]"><a><div className={styles.category_item}>
                         <img src={category.categoryImage.categoryImage.mediaItemUrl} alt=""/>
-                        <h4 style={theme === "dark" ? {color:"white"} : {color:"black"}}>{category.name} <span>{digitsEnToFa(category.posts.nodes.length)}</span> </h4>
+                        <h4 style={theme === "dark" ? {color:"white"} : {color:"rgba(0,0,0,0.7)"}}>{category.name} <span>{digitsEnToFa(category.posts.nodes.length)}</span> </h4>
 
                     </div></a></Link>  : null}
                             

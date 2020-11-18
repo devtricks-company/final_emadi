@@ -3,6 +3,7 @@
     margin-top:7rem;
     .slider_container{
         width: 80%;
+        min-height: 630px;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
@@ -27,12 +28,15 @@
                 width: 100%;
             }
             h3{
-                font-size: 32px;
+                font-size: 42px;
                 padding-bottom: 4rem;
+                font-weight: 500;
 
             }
             p{
-                 padding-bottom: 2rem;   
+                 padding-bottom: 2rem;  
+                 font-size: 20px;
+                 color:rgba(0,0,0,0.7); 
             }
             @media(max-width:576px){
                 padding:2rem;
@@ -44,12 +48,15 @@
         position: relative;
         .slider_arrow{
             position: absolute;
-            bottom: 0;
+            bottom: 0px;
             left: 0;
+            @media(max-width:576px){
+                bottom: 361px;
+            }
            span{
             background: white;
-            font-size: 30px;
-            padding:10px 35px;
+            font-size: 28px;
+            padding:10px 10px;
             display: block;
             cursor: pointer;
             margin-top: 5px;
