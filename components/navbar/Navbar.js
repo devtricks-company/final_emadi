@@ -109,7 +109,7 @@ export default function Navbar(){
         <nav className={styles.navbar}>
           <div className={styles.container_navbar}>
           <a href="/" className={styles.brand_navbar}>
-                <img src="/logo.png" alt="" style={{width:"80px"}}/>
+                <img src="/logo.png" alt="" style={{width:"50px"}}/>
             </a>
             <h1>{data && data.allSettings.generalSettingsTitle}</h1>
             <div className={styles.icon_wrapper}>
@@ -133,7 +133,7 @@ export default function Navbar(){
             <nav className={styles.navbar_dark}>
           <div className={styles.container_navbar}>
           <a href="/" className={styles.brand_navbar}>
-                <img src="/logo.png" alt="" style={{width:"80px"}}/>
+                <img src="/logo.png" alt="" style={{width:"50px"}}/>
             </a>
             <h1>{data && data.allSettings.generalSettingsTitle}</h1>
             <div className={styles.icon_wrapper}>
@@ -156,7 +156,7 @@ export default function Navbar(){
         <nav className={styles.navbar_search}>
           <div className={styles.container_navbar}>
           <a href="/" className={styles.brand_navbar}>
-                <img src="/logo.png" alt="" style={{width:"80px"}}/>
+                <img src="/logo.png" alt="" style={{width:"50px"}}/>
             </a>
             <h1>{data && data.allSettings.generalSettingsTitle}</h1>
             <div className={styles.icon_wrapper}>
@@ -176,7 +176,7 @@ export default function Navbar(){
                         {dataSearch && dataSearch.posts.edges.length > 0 && dataSearch.posts.edges.map(post => 
                             <div key={post.node.id} data-aos="fade-up" className={styles.post_item}>
                                 <div className={styles.post_item_image}>
-                                    <img src={post.node.featuredImage.node.mediaItemUrl} alt="" style={{width:"80px"}}/>
+                                    <img src={post.node.featuredImage.node.mediaItemUrl} alt="" style={{width:"50px"}}/>
                                 </div>
                                 <div className={styles.category_date}>
                                     <span>{post.node.categories.nodes[0].name}</span>
