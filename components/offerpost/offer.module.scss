@@ -34,7 +34,7 @@
                 position: static;
             }
             h3{
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: 300;
                
             }
@@ -60,6 +60,7 @@
             display: flex;
             justify-content: space-between;
             color:rgba(0,0,0,0.7);
+            font-size: 14px;
         }
         .post_title{
             direction: rtl;
@@ -95,13 +96,13 @@
                 text-align: right;
                 display: flex;
                 justify-content: space-between;
-                font-size: 16px;
+                font-size: 14px;
                 color: rgba(0,0,0,0.7);
             }
             h3{
                 direction: rtl;
                 text-align: right;
-                font-size: 18px;
+                font-size: 16px;
                 padding-bottom: 20px;
                 padding-top:20px;
                 font-weight: 300;
