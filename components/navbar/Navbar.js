@@ -1,6 +1,6 @@
 import {gql,useQuery} from '@apollo/client';
 import styles from './navbar.module.scss';
-import {FaTimes} from 'react-icons/fa';
+import {MdClose} from 'react-icons/md';
 import {CgSearch} from 'react-icons/cg';
 import {CgMenuRight} from 'react-icons/cg';
 import Category from '../category/Category';
@@ -137,7 +137,7 @@ export default function Navbar(){
             </a>
             <h1>{data && data.allSettings.generalSettingsTitle}</h1>
             <div className={styles.icon_wrapper}>
-                <span><FaTimes color="white" onClick={closeSearchHandler} style={{cursor:"pointer"}} /></span>
+                <span><MdClose color="white" onClick={closeSearchHandler} style={{cursor:"pointer"}} /></span>
                  
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function Navbar(){
             <h1>{data && data.allSettings.generalSettingsTitle}</h1>
             <div className={styles.icon_wrapper}>
                
-                <span><FaTimes color="black" onClick={closeSearchContentHandler} style={{cursor:"pointer"}} /></span> 
+                <span><MdClose color="black" onClick={closeSearchContentHandler} style={{cursor:"pointer"}} /></span> 
             </div>
           </div>
         </nav>
@@ -219,13 +219,13 @@ export default function Navbar(){
                         right:0
                 }}
                 >
-                    <FaTimes color="white" className={styles.closeMenu} onClick={closeMenuClickHandler} />
+                    <MdClose color="white" className={styles.closeMenu} onClick={closeMenuClickHandler} style={{position:"relative",top:"20px"}} />
                    <h2>دسته بندی</h2>
                    <ul>
                        {dataCategory && dataCategory.categories.nodes.map(category => 
                             <>
                             {category.name === "Uncategorized" ? null : <li>
-                                <Link href={`categories/${category.id}`}><a>{category.name}
+                                <Link href={`/categories/${category.id}`}><a>{category.name}
                                     </a></Link> 
                                 </li> }
                                 
