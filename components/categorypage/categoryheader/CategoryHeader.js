@@ -33,7 +33,7 @@ const CategoryHeader = () => {
   };
   const variants = {
       open:{ height: "700px" },
-      close:{ height:"450px" }
+      close:{ height:"420px" }
   }
   return (
     <AnimatePresence>
