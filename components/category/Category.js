@@ -36,9 +36,14 @@ export default function Category({title,theme}){
               <div className={styles.category_wrapper_item}>
                 {data && data.categories.nodes.map(category =>
                     <>
-                    {category.name !== "Uncategorized" ? <Link as={`/categories/${category.id}`} href="/categories/[id]"><a><div className={styles.category_item}>
+                    {category.name !== "Uncategorized" ? <Link as={`/categories/${category.id}`} 
+                    href="/categories/[id]"><a ><div onMouseOver={(e) =>{
+                      theme === "dark" ? e.target.classList.add('hoverTheme') : null
+                    }}
+                   
+                    className={styles.category_item}>
                         <img src={category.categoryImage.categoryImage.mediaItemUrl} alt=""/>
-                        <h4 style={theme === "dark" ? {color:"white"} : {color:"rgba(0,0,0,0.7)"}}>{category.name} <span>{digitsEnToFa(category.posts.nodes.length)}</span> </h4>
+                        <h4 style={theme === "dark" ? {color:"rgba(255,255,255,0.6)"} : {color:"rgba(0,0,0,0.7)"}}>{category.name} <span>{digitsEnToFa(category.posts.nodes.length)}</span> </h4>
 
                     </div></a></Link>  : null}
                             

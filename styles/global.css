@@ -7,3 +7,7 @@
 body{
     background:#f5f2f1;
 }
+
+.hoverTheme:hover h4{
+    color:white !important;
+}

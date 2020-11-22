@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import styles from "./categoryheader.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import Category from "../../../components/category/Category";
+import { duration } from "moment-jalaali";
 export const GET_CATEGORY_NAME = gql`
   query categoryPage($id: ID!) {
     category(id: $id) {
@@ -32,14 +33,18 @@ const CategoryHeader = () => {
     setShowCategory(!showCategory);
   };
   const variants = {
-      open:{ height: "700px" },
+      open:{ height: "635px" },
       close:{ height:"420px" }
   }
   return (
     <AnimatePresence>
     <motion.header className={styles.header} initial={{height:"500px"}} animate={showCategory ? "open" : "close"}
      variants={variants}
-     
+     transition={
+       {
+         duration:1
+       }
+     }
      >
       <div className={styles.category_container}>
         <h2>
